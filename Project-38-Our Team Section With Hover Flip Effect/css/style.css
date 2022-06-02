@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+
+}
+body{
+    background: #222;
+}
+
+
+.team{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 100px 50px;
+}
+.team h1{
+    
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    padding-bottom: 15px;
+    margin-bottom: 60px;
+    text-align: center;
+    position: relative;
+
+}
+.team h1::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 120px;
+    background: white;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.card{
+    cursor: pointer;
+    position: relative;
+    margin: 5px 5px;
+    backface-visibility: hidden;
+}
+.box{
+    
+    transform: perspective(600px) rotateY(0deg);
+    transition: all 0.5s;
+}
+
+
+.box img{
+    width: 250px;
+}
+.info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 22% 0 ;
+    backface-visibility: hidden;
+    transform: perspective(600px) rotateY(180deg);
+    transition: all 0.5s;
+}
+
+.info h2{
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.info h4{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.social i{
+
+    font-size: 28px;
+    color: black;
+    background-color:white ;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    line-height: 42px;
+    box-shadow: 0 0 10px 2px rgb(0 0 0/50%);
+    margin: 7px 1px;
+    transition: all 0.5s ease-in-out;
+}
+.social i:hover{
+    background-color: black;
+    color: white;
+}
+
+.card:hover .info{
+    transform: perspective(600px) rotateY(0deg);
+}
+.card:hover .box{
+    transform: perspective(600px) rotateY(-180deg);
+}
+

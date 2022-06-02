@@ -1,0 +1,315 @@
+@import url('http://fonts.cdnfonts.com/css/federal-service');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration:none ;
+    overflow: hidden;
+
+}
+body{
+    background-color: #D6FBF8;
+
+    font-family: 'Federal Service', sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column ;
+
+}
+.section{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+}
+
+
+/* *******header******  */
+.header{
+    display: flex;
+    position: relative;
+    height: 120px;    
+    width: 80%;
+    align-items: center;
+   
+}
+
+.header .left a{
+    font-size: 40px;
+    color: rgba(60,203,60,1);
+}
+.header .left a span{
+    font-size: 90px;
+}
+
+.header .right{
+    position: absolute;
+    right: 0;
+    display: flex;
+    
+}
+.header .right .right_row{
+    margin: 0 20px;
+    border: 2px solid rgba(60,203,60,1);
+    padding: 15px 20px;
+    border-radius: 30px;
+    background: #D6FBF8;
+    transition: 00.3s;
+}
+.header .right .right_row:hover{
+    border: 2px solid rgb(38, 141, 38);
+    
+}
+.header .right .right_row a{
+    font-size: 25px;
+    color: rgba(60,203,60,1);
+    transition: 00.3s;
+    
+}
+.header .right .right_row:hover a{
+   color:rgb(38, 141, 38) ;
+    
+}
+.section:nth-child(1){
+
+    background: #fff;
+}
+
+
+/* media Query */
+
+@media only screen and (max-width: 1200px) {
+    .header .left a{
+        font-size: 30px;
+    }
+    .header .left a span{
+        font-size: 60px;
+    }
+    .header .right .right_row{
+        padding: 8px 12px;
+        margin: 0 8px;
+    }
+    .header .right .right_row a{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    
+    .header .left a span{
+        font-size: 60px;
+    }
+    .header .right .right_row{
+        padding: 8px 12px;
+        margin: 0 5px;
+
+    }
+    .header .right .right_row a{
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .header{
+        flex-direction: column;
+    }
+    .header .right{
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 5px;
+        margin-bottom: 10px;
+    }
+    .header .right .right_row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header .right .right_row a{
+        font-size: 15px;
+    }
+}
+
+/* <!-- Query section  --> */
+.section:nth-child(2){
+
+    background: #706464;
+}
+
+
+.Query{
+    display: flex;
+    position: relative;
+    height: 80px;    
+    width: 80%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    overflow: unset;
+}
+
+.Query ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+    
+}
+.Query ul li a{
+    color:rgba(255, 255, 255, 0.616);
+    font-size: 30px;
+    font-family: none;
+    transition: 0.2s;
+}
+.Query ul li:hover a{
+    color:#fff;
+}
+
+/* media Query */
+
+@media only screen and (max-width: 1200px) {
+    .Query ul li a{
+        font-size:20px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .Query ul li a{
+        font-size:15px;
+    }
+  
+}
+@media only screen and (max-width: 600px) {
+    .Query{
+        height: 70px;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        transition: 0.5s ease;
+
+    }
+    .Query.active{
+        height: 250px;
+    }
+    .Query .hamburger{
+        height: 45px;
+        width: 45px;
+        display: inline-block;
+        border:2.5px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: absolute;
+        top: 12px;
+        left: 12px; 
+       overflow: unset;
+    }
+    .Query .hamburger::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border:2.5px solid white;
+
+        border-radius: 50%;
+        animation: animate 0.5s  ease infinite;
+
+    }
+    @keyframes animate {
+       
+        100%{
+          transform: scale(1.4);
+          opacity: 0;
+        }
+    }
+    .Query .hamburger .bar{
+        position: relative;
+        display: flex;
+        width: 25px;
+        height: 2px;
+        background: #fff;
+        overflow: unset;
+        transition: 0.5s;
+    }
+    .Query .hamburger.active .bar{
+        transform: rotate(180deg);
+    }
+    .Query .hamburger .bar::before,
+    .Query .hamburger .bar::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        transition: 0.3s ease;
+        transition-property: top,bottom;
+    }
+    .Query .hamburger .bar::before{
+        top:6px;
+    }
+    .Query .hamburger .bar::after{
+        bottom:6px;
+    }
+    .Query .hamburger.active .bar::before{
+        top: 0;
+    }
+    .Query .hamburger.active .bar::after{        
+        bottom: 0;
+    }
+    .Query ul{
+        position: absolute;
+        top: 70px;
+        align-items: center;
+        flex-direction: column;
+    }
+    .Query ul li {
+        margin: 10px;
+    }
+    .Query ul li a{
+        font-size: 20px;
+    }
+  
+}
+
+/* <!-- input section  --> */
+.input{
+    margin-top: 100px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 80%;
+    background: transparent;
+    padding: 20px 0;
+}
+.input .btn{
+    margin-bottom: 10px;
+}
+.input .btn button{
+    padding: 5px 15px;
+    font-weight: 800;
+    color: white;
+    background: rgb(119, 102, 102);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+.input .text input{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid rgb(197, 195, 195);
+    outline: none;
+}
+.input .text input:focus{
+    border: 2px solid rgb(3, 183, 255);
+}

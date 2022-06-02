@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: rgb(216, 171, 74);
+        }
+        .zig-zag{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: rgb(85, 148, 21);
+            width: 100%;
+            height: 50%;
+        }
+        .zig-zag::before{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 16px;
+            background: 
+            linear-gradient(-45deg,transparent 33.33%,rgb(216, 171, 74) 33.33%,
+            rgb(216, 171, 74) 66.66%,transparent 66.66%),
+
+            linear-gradient(45deg,transparent 33.33%,rgb(216, 171, 74) 33.33%,
+            rgb(216, 171, 74) 66.66%,transparent 66.66%);
+            
+            background-size: 30px 60px;
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="zig-zag">
+
+    </div>
+</body>
+</html>

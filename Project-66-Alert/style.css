@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.alert-item{
+    display: flex;
+    flex-direction: columns;
+    width: 700px;
+    height: 80px;
+    border: 2px solid; 
+    position: absolute;
+    top: -80px;
+    border-left: 8px solid;
+    border-radius: 22px;
+    backdrop-filter: blur(25px);
+    animation: alert-down 3s linear;
+    opacity: 0;
+}
+@keyframes alert-down{
+    
+    15%,20%,50%,80%{
+        opacity: 1;
+        top:20px;
+    }
+    100%{
+        top:40px;
+        opacity: 0;
+    }
+}
+.alert-left{
+    position: relative;
+    width: 14%;
+    height: 100%;
+
+}
+.alert-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.alert-icon i{
+    font-size: 45px;
+    font-weight: 600;
+}   
+.alert-icon .fa{
+    font-size: 35px;
+}   
+.alert-center{
+    position: relative;
+    width: 72%;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    letter-spacing: 1px;
+    color: white;
+}
+.alert-center h2{
+
+    padding: 5px 0;
+    margin-top: 5px;
+}
+.alert-right{
+    position: relative;
+    width: 14%;
+    height: 100%;
+}
+.alert-right span{
+    font-size: 40px;
+    animation: angry 2s linear;
+}
+@keyframes angry{
+    50%{
+        transform: rotate(0deg);
+    }
+    55%,65%,75%,85%,95%{
+        transform: rotate(-30deg);
+    }
+    60%,70%,80%,90%,100%{
+        transform: rotate(30deg);
+    }
+}
+
+.bg-warning{
+    color: rgb(255, 208, 0);
+}
+.border-warning{
+    border-color: rgb(255, 208, 0);
+}
+.bg-danger{
+    color: red;
+}
+.border-danger{
+    border-color: rgb(196, 30, 30);
+}
+.bg-success{
+    color: rgb(36, 196, 4);
+}
+.border-success{
+    border-color: rgb(36, 196, 4);
+}
+.bg-primary{
+    background-color: rgb(0, 185, 218);
+}
+.border-primary{
+    border-color: rgb(0, 185, 218);
+}

@@ -1,0 +1,24 @@
+-->mkdir restful   ---to make a folder --restful is a folder name
+-->dir --to see what is in tha folder
+-->cls --for clear terminal
+
+************* API *************
+
+-->npm init -y --->to install package.json
+-->npm install express
+-->npm install mongoose
+-->npm install validator t-- to check ..is any one enter number ,email ..etc valid or not valid.
+-->cd src -- to go to the file src
+-->cd .. --to exit to  the file 
+
+-->node src/app.js --to start the server
+
+
+-->"start" : "node src/app.js",
+    "dev" : "nodemon src/app.js"
+    custom add  script in package.json to start the nodemon server
+
+    -->npm run dev
+
+
+-->npm i pug,hbs etc.

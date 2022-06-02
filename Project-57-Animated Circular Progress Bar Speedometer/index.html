@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background: #222;
+
+        }
+        .circle{
+            width: 200px;
+            height: 200px;
+            /* border: 1px  solid #fff; */
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+        .points{
+            
+            width: 3px;
+            height: 15px;
+            background: #0007;
+            position: absolute;
+            transform: rotate(calc(var(--i)*var(--r))) translateY(-100px);
+            border-radius: 3px;
+            animation: glow .1s linear forwards;
+            animation-delay: calc(var(--i)*0.1s);
+        }
+        @keyframes glow {
+            100%{
+                background: #52a8ff;
+                box-shadow: 0  0 20px #52a8ff;
+            }
+        }
+
+    .text{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        border: 2px solid white;
+       
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="text">
+            hello
+        </div>
+        <div class="circle" dot="100" >
+            <div class="points" style="--i: 1;"></div>
+            <div class="points" style="--i: 2;"></div>
+        </div>
+      
+    </div>
+
+    <script>
+        function op(elem){return document.querySelector(elem)}
+        function opp(elem){return document.querySelectorAll(elem)}
+
+
+        var circles = opp(".circle");
+        
+        circles.forEach(val=>{
+            var numDots = val.getAttribute("dot");
+            var pt ='';
+
+            var rot = 360/numDots;
+            for (var a = 0; a < numDots; a++) {
+                pt+=`<div class="points" style="--i: ${a}; --r:${rot}deg;"></div>`;
+                
+            }
+            val.innerHTML=pt;
+        })
+    </script>
+</body>
+</html>
